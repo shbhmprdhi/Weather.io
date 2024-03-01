@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherIO</title>
 
+    <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png">
+
     <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
             @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
@@ -139,6 +141,8 @@
     </div>
 
     <script>
+        require('dotenv').config();
+
         const temperature = document.querySelector(".temperature");
         const city = document.querySelector(".location");
         const date = document.querySelector(".date");
@@ -152,7 +156,7 @@
 
 
         let apiCity = "Bengaluru";
-        let apiKey = "";
+        let apiKey = process.env.apikey;
 
         const fetchData = async(apiCity, apiKey) => {
         try {

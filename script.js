@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const temperature = document.querySelector(".temperature");
 const city = document.querySelector(".location");
 const date = document.querySelector(".date");
@@ -11,7 +13,7 @@ form.addEventListener("submit", search);
 
 
 let apiCity = "Bengaluru";
-let apiKey = "";
+let apiKey = process.env.apikey;
 
 const fetchData = async(apiCity, apiKey) => {
 try {
